@@ -2,11 +2,14 @@
  *= require_self
  */
 
-$bar-color: #374c66 !default;
-$link-color: #ffffff !default;
-$link-selected-color: #485a71 !default;
-$link-active-color: #0747a6 !default;
-$link-hover-color: #5b718e !default;
+$bar-bg-color: #287fba !default;
+$bar-link-color: #ffffff !default;
+$bar-link-selected-color: #5298c7 !default;
+$bar-link-active-color: #3d8bc0 !default;
+$bar-link-hover-color: #2472a7 !default;
+
+$menu-link-color: #1a2544 !default;
+$menu-link-selected-color: #17213d !default;
 
 .layout-container {
   display: flex;
@@ -63,7 +66,7 @@ $link-hover-color: #5b718e !default;
           );
         }
         .items-list-container {
-          background-color: $bar-color;
+          background-color: $bar-bg-color;
           -webkit-box-align: center;
           align-items: center;
           box-sizing: border-box;
@@ -76,7 +79,7 @@ $link-hover-color: #5b718e !default;
           padding-top: 24px;
           width: 64px;
           height: calc(100vh - 0px);
-          color: rgb(255, 255, 255);
+          color: $bar-link-color;
           fill: rgb(7, 71, 166);
           transition: background-color 0.3s cubic-bezier(0.2, 0, 0, 1) 0s,
             color 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
@@ -112,7 +115,7 @@ $link-hover-color: #5b718e !default;
             .navigation-item-link {
               -webkit-box-align: center;
               align-items: center;
-              color: $link-color;
+              color: $bar-link-color;
               cursor: pointer;
               display: flex;
               font-size: inherit;
@@ -135,13 +138,13 @@ $link-hover-color: #5b718e !default;
                 margin-bottom: 8px;
               }
               &.selected {
-                background-color: $link-selected-color;
+                background-color: $bar-link-selected-color;
               }
               &:active {
-                color: $link-active-color;
+                color: $bar-link-active-color;
               }
               &:hover {
-                background-color: $link-hover-color;
+                background-color: $bar-link-hover-color;
               }
             }
           }
@@ -179,7 +182,7 @@ $link-hover-color: #5b718e !default;
           top: 0px;
           width: 100%;
           background-color: rgb(244, 245, 247);
-          color: rgb(66, 82, 110);
+          color: $menu-link-color;
           animation-duration: 0.22s;
           animation-fill-mode: forwards;
           animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
@@ -209,7 +212,7 @@ $link-hover-color: #5b718e !default;
               -webkit-box-align: center;
               align-items: center;
               box-sizing: border-box;
-              color: inherit;
+              color: $menu-link-color;
               cursor: pointer;
               display: flex;
               flex-shrink: 0;
@@ -239,7 +242,7 @@ $link-hover-color: #5b718e !default;
                 -ms-flex-negative: 0;
                 flex-shrink: 0;
                 margin-right: 16px;
-                color: #42526e;
+                color: $menu-link-color;
               }
               .navigation-menu-item-label {
                 display: flex;
@@ -257,7 +260,7 @@ $link-hover-color: #5b718e !default;
                 background-color: rgb(235, 236, 240);
                 .navigation-menu-item-icon,
                 .navigation-menu-item-label {
-                  color: #0052cc;
+                  color: $menu-link-selected-color;
                 }
               }
             }

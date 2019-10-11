@@ -1,5 +1,4 @@
 class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
-  # include ActionView::Helpers::AssetTagHelper
   include ActionView::Helpers::TextHelper
   include ActionView::Context
 
