@@ -1,0 +1,21 @@
+.navigation-container
+  .container-navigation-mask
+    .global-navigation
+      .shadow{:style => "margin-left: 64px;"}
+      = render_navigation(context: :global, level: 1)
+    - if show_navigation_menu?
+      .content-navigation-wrapper
+        .container-navigation-menu-base
+          .scroll-provider{:role => "group", :tabindex => "-1"}
+            .container-navigation-menu-top= yield :global_navigation_menu_top
+            .container-navigation-menu= render_navigation context: :global, level: 2
+            .container-navigation-menu-bottom= yield :global_navigation_menu_bottom              
+  - if show_navigation_menu?
+    .outer
+      .shadow
+      %a#navigation-resize-button-open.navigation-resize-button.open
+        %i.fa.fa-fw.fa-angle-right
+      %a#navigation-resize-button-close.navigation-resize-button.opened
+        %i.fa.fa-fw.fa-angle-left
+      %a.navigation-resize-button.closed
+        %i.fa.fa-fw.fa-bars

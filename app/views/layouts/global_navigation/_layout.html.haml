@@ -1,0 +1,5 @@
+.layout-container#global-navigation{class: show_navigation_menu? ? '' : 'closed'}
+  = render 'layouts/global_navigation/menu'
+  .content-container
+    .content
+      = yield

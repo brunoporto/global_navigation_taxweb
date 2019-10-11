@@ -14,8 +14,10 @@ Gem::Specification.new do |spec|
   spec.description = "Global Navigation"
   spec.license     = "MIT"
   
-  spec.files = Dir["{app,config,db,lib}/**/*", "README.md"]
+  spec.files = Dir["{app,config,db,lib}/**/*", "Rakefile", "README.md"]
+  spec.test_files = Dir["test/**/*"]
 
+  spec.add_dependency 'haml', '>= 0'
   spec.add_dependency 'simple-navigation', '>= 0'
   spec.add_dependency 'sass-rails', '>= 0'
 
