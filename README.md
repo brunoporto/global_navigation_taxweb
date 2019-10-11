@@ -1,28 +1,45 @@
 # GlobalNavigation
-Short description and motivation.
 
-## Usage
-How to use my plugin.
+Navegação Global
 
-## Installation
-Add this line to your application's Gemfile:
+## Dependências
+
+- rails-sass
+- simple-navigation
+
+## Instalação
+
+Adicione ao Gemfile do seu aplicativo:
 
 ```ruby
-gem 'global_navigation'
+gem 'global_navigation', :git => 'https://OAUTH_TOKEN:x-oauth-basic@github.com/taxweb/global_navigation'
 ```
 
-And then execute:
+Depois execute:
+
 ```bash
-$ bundle
+$ bundle install
+$ rake global_navigation:install
 ```
 
-Or install it yourself as:
-```bash
-$ gem install global_navigation
+Adicione os assets:
+
+`app/assets/javascripts/application.js`:
+
+```js
+//= require global_navigation
 ```
 
-## Contributing
-Contribution directions go here.
+`app/assets/stylesheets/application.js`:
 
-## License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+```css
+/*
+*= require global_navigation/global_navigation
+*/
+```
+
+## Configuração
+
+Edite o arquivo gerado pela instalação em `config/global_navigation.rb`
+
+Edite as cores da barra na folha de estilos gerado em `app/assets/stylesheets/global_navigation.css`
