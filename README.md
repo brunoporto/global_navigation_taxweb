@@ -1,7 +1,5 @@
 # GlobalNavigation
 
-![alt text](docs/taxweb_icon_logo.png)
-
 Navegação Global
 
 ## Dependências
