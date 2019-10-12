@@ -27,17 +27,13 @@ $ rake global_navigation:install
 
 Adicione os assets:
 
-`app/assets/javascripts/application.js`:
-
 ```js
-//= require global_navigation
+//= require global_navigation/global_navigation
 ```
-
-`app/assets/stylesheets/application.js`:
 
 ```css
 /*
-*= require global_navigation/global_navigation
+*= require global_navigation
 */
 ```
 
@@ -136,7 +132,7 @@ Para adicionar um item de título no menu flutuante para criar grupos dentro do 
 
 ## CONFIGURAR CORES DE TEMA DA BARRA
 
-Edite as cores da barra na folha de estilos gerado em `app/assets/stylesheets/global_navigation.css`
+Edite as cores da barra na folha de estilos gerado em `app/assets/stylesheets/global_navigation.scss`
 
 ## ADICIONAR LEIAUTE DA BARRA DO APLICATIVO
 
