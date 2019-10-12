@@ -140,7 +140,6 @@ class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
 
   def icon_class_from_options(item)
     item_options = item.send(:options) # private method
-    return "fa fa-fw fa-#{item_options[:fa_icon]}" if item_options[:fa_icon].present?
     item_options[:icon_class] if item_options[:icon_class].present?
   end
 
