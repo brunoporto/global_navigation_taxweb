@@ -57,6 +57,8 @@ Essa linha deve ter sempre o `ID :logo` e o atributo `:src` para informar a imag
 navigation_bar.item :logo, "Taxconsole", root_path, src: asset_pat("logo.png")
 ```
 
+![Item tipo Logotipo](docs/item_logotipo.png)
+
 ### ITEM PARA EXIBIR O USUÁRIO
 
 Possui a posição fixa sempre como o último item da barra, não importa em qual ordem você informe ele no arquivo.
@@ -66,6 +68,8 @@ Essa linha deve ter sempre o `ID :profile` e o atributo `:src` para informar a i
 ```ruby
 navigation_bar.item :profile, "Seu perfil", user_path(current_user), src: asset_path(current_user.avatar)
 ```
+
+![Item tipo Usuário](docs/item_usuario.png)
 
 ### CONFIGURAR ICONES DOS ITENS
 
@@ -78,6 +82,8 @@ Exemplo:
 ```ruby
 navigation_bar.item :apps, "Aplicativos", apps_path, icon_class: 'fa fa-fw fa-star'
 ```
+
+![Ícones](docs/icones.png)
 
 Items de menu flutuante não aceitam configurações de ícone, caso o atributo `icon_class` seja informado em um item de menu flutuante, ele será ignorado.
 
@@ -94,6 +100,8 @@ navigation_bar.item :plus, "Plus", root_path, icon_class: 'fa fa-fw fa-plus', po
 navigation_bar.item :bell, "Bell", root_path, icon_class: 'fa fa-fw fa-bell', position: :secondary
 ```
 
+![Posições na Barra](docs/posicoes.png)
+
 Ele segue a ordem no qual os ícones são informados no arquivo de configuração.
 
 ### CRIAR ITEM COM SUB-ITENS
@@ -109,6 +117,8 @@ Para utilizar o menu lateral da página, basta informar os itens e acessar os en
   end
 ```
 
+![Subitens laterais](docs/subitens_lateral.png)
+
 Para ativar o menu flututante, você deve seguir o mesmo procedimento do menu lateral, porém deve informar no contexto do menu que ele é flutuante através do atributo `:type` passado no `dom_attributes`. Exemplo:
 
 ```ruby
@@ -118,6 +128,8 @@ Para ativar o menu flututante, você deve seguir o mesmo procedimento do menu la
     navigation_menu.item :users, "Users", users_path
   end
 ```
+
+![Subitens Flutuantes](docs/subitens_flutuantes.png)
 
 ### ADICIONAR TITULO AO MENU FLUTUANTE
 
@@ -135,6 +147,8 @@ Para adicionar um item de título no menu flutuante para criar grupos dentro do 
     navigation_menu.item :config, "Minha Conta", admin_account_path
   end
 ```
+
+![Títulos Menu Flutuante](docs/titulos_menu_flutuante.png)
 
 ## CONFIGURAR CORES DE TEMA DA BARRA
 
@@ -176,6 +190,8 @@ Para adicionar um cabeçalho no menu lateral atual, utilize o helper `content_fo
 <% end %>
 ```
 
+![Cabeçalhos do Menu Lateral](docs/cabecalho_menu_lateral.png)
+
 ## ADICIONAR CONTEUDO NO RODAPÉ DO MENU LATERAL
 
 Para adicionar um rodapé no menu lateral atual, utilize o helper `content_for`. Você pode informar HTML. Exemplo:
@@ -185,3 +201,5 @@ Para adicionar um rodapé no menu lateral atual, utilize o helper `content_for`.
   <i>Rodapé do Menu lateral!</i>
 <% end %>
 ```
+
+![Rodapé do Menu Lateral](docs/rodape_menu_lateral.png)
