@@ -51,7 +51,7 @@ class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
   end
 
   def master_navigation_item(item, item_options)    
-    float_menu = item_options[:type] == :float_menu
+    float_menu = float_menu?(item)
     navigation_item_class = 'navigation-item'
     navigation_item_class = add_class(navigation_item_class, 'navigation-dropdown') if float_menu
     content_tag(:div, class: navigation_item_class) do
@@ -105,6 +105,8 @@ class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
 
   def menu_items(item_container)
     menu_items = []
+    return if float_menu?(item_container)
+
     item_container.items.each do |item|
       menu_items << menu_item(item)
     end
@@ -141,6 +143,21 @@ class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
     return "fa fa-fw fa-#{item_options[:fa_icon]}" if item_options[:fa_icon].present?
     item_options[:icon_class] if item_options[:icon_class].present?
   end
+
+  def float_menu?(item)
+    attrs = item.sub_navigation&.dom_attributes if item.is_a?(SimpleNavigation::Item)
+    attrs = item.dom_attributes if item.is_a?(SimpleNavigation::ItemContainer)
+    return false unless attrs
+
+    attrs[:type] == :float_menu
+  end
+
+
+
+
+
+
+
 
 
 

@@ -43,6 +43,17 @@ Adicione os assets:
 ### ITEMS DO MENU
 
 Edite o arquivo gerado pela instalação em `config/global_navigation.rb`
+:logo :src
+:profile :src
+
+fa_icon:
+icon_class:
+
+position: :primary
+position: :secondary
+
+type: :float_menu
+group_title: true
 
 ### CORES DO TEMA
 

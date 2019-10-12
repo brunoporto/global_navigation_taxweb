@@ -19,16 +19,22 @@
       );
       // attach events
       var that = this;
-      this.closeButton.addEventListener("click", function(ev) {
-        that.close(ev);
-      });
-      this.openButton.addEventListener("click", function(ev) {
-        that.open(ev);
-      });
-      for (const floatMenuButton of this.floatMenuButtons) {
-        floatMenuButton.addEventListener("click", function(ev) {
-          that.openFloatMenu(ev);
+      if (this.closeButton) {
+        this.closeButton.addEventListener("click", function(ev) {
+          that.close(ev);
         });
+      }
+      if (this.openButton) {
+        this.openButton.addEventListener("click", function(ev) {
+          that.open(ev);
+        });
+      }
+      if (this.floatMenuButtons) {
+        for (const floatMenuButton of this.floatMenuButtons) {
+          floatMenuButton.addEventListener("click", function(ev) {
+            that.openFloatMenu(ev);
+          });
+        }
       }
     };
 
