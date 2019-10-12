@@ -76,6 +76,8 @@ Exemplo:
 navigation_bar.item :apps, "Aplicativos", apps_path, icon_class: 'fa fa-fw fa-star'
 ```
 
+Items de menu flutuante não aceitam configurações de ícone, caso o atributo `icon_class` seja informado em um item de menu flutuante, ele será ignorado.
+
 ** POSICAO **
 
 A barra de menu lateral possui dois grupos de ícones, o grupo primarios `primary`, posicionados no topo da barra e o grupo secundário `secondary` posicionado na parte inferior da barra.
