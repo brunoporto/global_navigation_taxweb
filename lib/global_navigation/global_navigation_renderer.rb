@@ -8,19 +8,19 @@ class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
 
     case item_container.level
     when 1
-      master_items(item_container.items)
+      master_items(item_container)
     else
-      menu_items(item_container.items)
+      menu_items(item_container)
     end
   end
 
-  def master_items(items)
+  def master_items(item_container)
     primary_items = []
     primary_item_first = nil
     secondary_items = []
     secondary_items_last = nil
 
-    items.each do |item|
+    item_container.items.each do |item|
       item_options = item.send(:options) # private method
       item_options[:position] = :primary if item.key == :logo
       item_options[:position] = :secondary if item.key == :profile
@@ -28,21 +28,21 @@ class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
 
       if item_options[:position] == :secondary 
         if item.key == :profile
-          secondary_items_last = master_navigation_item(item, :secondary)
+          secondary_items_last = master_navigation_item(item, item_options)
         else
-          secondary_items << master_navigation_item(item, :secondary)
+          secondary_items << master_navigation_item(item, item_options)
         end
       else
         if item.key == :logo
-          primary_item_first = master_navigation_item(item, :primary)
+          primary_item_first = master_navigation_item(item, item_options)
         else
-          primary_items << master_navigation_item(item, :primary)
+          primary_items << master_navigation_item(item, item_options)
         end
       end
     end
 
-    primary_items.unshift primary_item_first if primary_item_first
-    secondary_items.push secondary_items_last if secondary_items_last
+    primary_items.unshift(primary_item_first) if primary_item_first
+    secondary_items.push(secondary_items_last) if secondary_items_last
 
     content_tag(:div, class: 'items-list-container') do
       concat(content_tag(:div, content_list_to_html(primary_items), class: 'primary-items-list items-list')) if primary_items.present?
@@ -50,8 +50,46 @@ class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
     end
   end
 
-  def master_navigation_item(item, position)
-    item_options = item.send(:options) # private method
+  def master_navigation_item(item, item_options)    
+    float_menu = item_options[:type] == :float_menu
+    navigation_item_class = 'navigation-item'
+    navigation_item_class = add_class(navigation_item_class, 'navigation-dropdown') if float_menu
+    content_tag(:div, class: navigation_item_class) do
+      concat(master_navigation_item_link(item, item_options))
+      concat(master_navigation_dropdown(item)) if float_menu
+    end
+  end
+
+  def master_navigation_dropdown(item)
+    sub_items = []
+    item.sub_navigation.items.each do |sub_item|
+      sub_items << master_navigation_dropdown_item(sub_item)
+    end
+    return if sub_items.blank?
+
+    content_tag(:div, class: 'navigation-dropdown-container') do
+      content_tag(:div, class: 'navigation-dropdown-content') do
+        content_list_to_html(sub_items)
+      end
+    end
+  end
+
+  def master_navigation_dropdown_item(item)
+      item_options = item.send(:options) # private method
+      if item_options[:group_title]
+        content_tag(:div, class: 'navigation-dropdown-group-title') do
+          content_tag(:span, item.name)
+        end
+      else
+        link_options = link_options_for(item)
+        link_options[:class] = add_class(link_options[:class], 'navigation-dropdown-item')        
+        link_to(content_tag(:span, item.name), item.url, link_options)
+      end
+  end
+
+  def master_navigation_item_link(item, item_options)
+    position = item_options[:position]
+    type = item_options[:type]
     link_options = link_options_for(item)
     link_options[:class] = add_class(link_options[:class], 'navigation-item-link')
     if item.key == :logo && position == :primary
@@ -62,15 +100,12 @@ class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
     else
       link_content = content_tag(:i, nil, class: icon_class_from_options(item))
     end
-    
-    content_tag(:div, class: 'navigation-item') do
-      link_to(link_content, item.url, link_options)
-    end
+    link_to(link_content, item.url, link_options)
   end
 
-  def menu_items(items)
+  def menu_items(item_container)
     menu_items = []
-    items.each do |item|
+    item_container.items.each do |item|
       menu_items << menu_item(item)
     end
     content_list_to_html(menu_items)
