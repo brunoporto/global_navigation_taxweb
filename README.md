@@ -10,8 +10,6 @@ Navegação Global
 
 A gem não atribuiu dependência de versão ao arquivo gemspec para que você possa instalar a melhor versão de acordo com o seu Rails.
 
-**A gem faz uso de recursos que requer que as dependências estejam instaladas e configuradas no seu ambiente para que você possa continuar com a instalação.**
-
 ## Instalação
 
 Adicione ao Gemfile do seu aplicativo:
