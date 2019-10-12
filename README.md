@@ -27,11 +27,15 @@ $ rake global_navigation:install
 
 Adicione os assets:
 
+**JS**
+
 ```js
 //= require global_navigation/global_navigation
 ```
 
-```css
+**SCSS**
+
+```scss
 /*
 *= require global_navigation
 */
