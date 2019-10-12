@@ -119,7 +119,7 @@ Para ativar o menu flututante, você deve seguir o mesmo procedimento do menu la
   end
 ```
 
-**TITULO DE GRUPO NO MENU FLUTUANTE**
+#### TITULO DE GRUPO NO MENU FLUTUANTE
 
 Para adicionar um item de título no menu flutuante para criar grupos dentro do menu, informe o atributo `group_title: true` no item. Exemplo:
 
