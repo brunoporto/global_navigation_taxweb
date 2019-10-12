@@ -41,13 +41,11 @@ Adicione os assets:
 */
 ```
 
-## Configuração
-
-### ITEMS DO MENU
+## ITEMS DO MENU
 
 Edite o arquivo gerado pela instalação em `config/global_navigation.rb`
 
-**LOGOTIPO**
+### LOGOTIPO
 
 Possui a posição fixa sempre como o primeiro item da barra, não importa em qual ordem você informe ele no arquivo.
 
@@ -57,7 +55,7 @@ Essa linha deve ter sempre o `ID :logo` e o atributo `:src` para informar a imag
 navigation_bar.item :logo, "Taxconsole", root_path, src: asset_pat("logo.png")
 ```
 
-**USUÁRIO**
+### USUÁRIO
 
 Possui a posição fixa sempre como o último item da barra, não importa em qual ordem você informe ele no arquivo.
 
@@ -67,7 +65,7 @@ Essa linha deve ter sempre o `ID :profile` e o atributo `:src` para informar a i
 navigation_bar.item :profile, "Seu perfil", user_path(current_user), src: asset_path(current_user.avatar)
 ```
 
-**ICONES**
+### ICONES
 
 Os ícones do menu devem ser utilizados como classe de estilo, exemplo do uso do Fontawesome : `fa fa-user`
 
@@ -81,7 +79,7 @@ navigation_bar.item :apps, "Aplicativos", apps_path, icon_class: 'fa fa-fw fa-st
 
 Items de menu flutuante não aceitam configurações de ícone, caso o atributo `icon_class` seja informado em um item de menu flutuante, ele será ignorado.
 
-**POSICAO**
+### POSICAO
 
 A barra de menu lateral possui dois grupos de ícones, o grupo primarios `primary`, posicionados no topo da barra e o grupo secundário `secondary` posicionado na parte inferior da barra.
 
@@ -96,7 +94,7 @@ navigation_bar.item :bell, "Bell", root_path, icon_class: 'fa fa-fw fa-bell', po
 
 Ele segue a ordem no qual os ícones são informados no arquivo de configuração.
 
-**TIPO DE SUBMENU**
+### TIPO DE SUBMENU
 
 Você pode criar itens de submenu para os itens da barra principal, sendo esses itens exibidos em um menu lateral dentro da página ou através de um menu flutuante.
 
@@ -119,7 +117,7 @@ Para ativar o menu flututante, você deve seguir o mesmo procedimento do menu la
   end
 ```
 
-#### TITULO DE GRUPO NO MENU FLUTUANTE
+### TITULO DE GRUPO NO MENU FLUTUANTE
 
 Para adicionar um item de título no menu flutuante para criar grupos dentro do menu, informe o atributo `group_title: true` no item. Exemplo:
 
@@ -136,11 +134,11 @@ Para adicionar um item de título no menu flutuante para criar grupos dentro do 
   end
 ```
 
-### CORES DO TEMA
+## CORES DO TEMA
 
 Edite as cores da barra na folha de estilos gerado em `app/assets/stylesheets/global_navigation.css`
 
-### LEIAUTE
+## LEIAUTE
 
 Coloque o conteúdo das suas páginas dentro do escopo do layout do Global Navigation, adicionando ao seu arquivo de leiaute (`app/views/layouts/application.html.erb` dessa forma:
 
@@ -166,7 +164,7 @@ Coloque o conteúdo das suas páginas dentro do escopo do layout do Global Navig
   </body>
 ```
 
-### CABEÇALHO DO MENU LATERAL
+## CABEÇALHO DO MENU LATERAL
 
 Para adicionar um cabeçalho no menu lateral atual, utilize o helper `content_for`. Você pode informar HTML. Exemplo:
 
@@ -176,7 +174,7 @@ Para adicionar um cabeçalho no menu lateral atual, utilize o helper `content_fo
 <% end %>
 ```
 
-### RODAPÉ DO MENU LATERAL
+## RODAPÉ DO MENU LATERAL
 
 Para adicionar um rodapé no menu lateral atual, utilize o helper `content_for`. Você pode informar HTML. Exemplo:
 
