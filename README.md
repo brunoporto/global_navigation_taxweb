@@ -8,7 +8,7 @@ Navegação Global
 - [simple-navigation](https://github.com/codeplant/simple-navigation)
 - [haml](https://github.com/haml/haml)
 
-A gem não atribuiu nenhuma dependência ao arquivo gemspec para que você possa instalar a melhor versão de acordo com o seu Rails.
+A gem não atribuiu dependência de versão ao arquivo gemspec para que você possa instalar a melhor versão de acordo com o seu Rails.
 
 **A gem faz uso de recursos que requer que as dependências estejam instaladas e configuradas no seu ambiente para que você possa continuar com a instalação.**
 

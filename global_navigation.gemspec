@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "Rakefile", "README.md"]
   spec.test_files = Dir["test/**/*"]
 
-  # spec.add_dependency 'haml', '>= 0'
-  # spec.add_dependency 'simple-navigation', '>= 0'
-  # spec.add_dependency 'sass-rails', '>= 0'
+  spec.add_dependency 'haml'
+  spec.add_dependency 'simple-navigation'
+  spec.add_dependency 'sass-rails'
 end
