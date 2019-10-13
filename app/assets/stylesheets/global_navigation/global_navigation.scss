@@ -46,25 +46,6 @@ $menu-link-selected-color: #17213d !default;
       overflow: hidden;
 
       .global-navigation {
-        .shadow {
-          bottom: 0px;
-          left: 0px;
-          opacity: 1;
-          pointer-events: none;
-          position: absolute;
-          top: 0px;
-          transition-duration: 0.22s;
-          transition-property: left, opacity, width;
-          transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
-          width: 12px;
-          background: linear-gradient(
-            to left,
-            rgba(0, 0, 0, 0.2) 0px,
-            rgba(0, 0, 0, 0.2) 1px,
-            rgba(0, 0, 0, 0.1) 1px,
-            rgba(0, 0, 0, 0) 100%
-          );
-        }
         .items-list-container {
           background-color: $bar-bg-color;
           -webkit-box-align: center;
