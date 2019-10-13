@@ -129,6 +129,20 @@ Para ativar o menu flututante, você deve seguir o mesmo procedimento do menu la
 
 ![Subitens Flutuantes](docs/subitens_flutuantes.png)
 
+### ADICIONAR TITULO AO MENU LATERAL
+
+Para adicionar um item de título no menu lateral para criar grupos dentro do menu, informe o atributo `group_title: true` no item. Exemplo:
+
+```ruby
+  navigation_bar.item :admin, "Admin", admin_path, icon_class: 'fa fa-fw fa-star', position: :secondary do |navigation_menu|
+    navigation_menu.item :title1, "Administração", nil, group_title: true
+    navigation_menu.item :apps, "Apps", apps_path
+    navigation_menu.item :users, "Users", users_path
+  end
+```
+
+![Título Menu Lateral](docs/titulo_menu_lateral.png)
+
 ### ADICIONAR TITULO AO MENU FLUTUANTE
 
 Para adicionar um item de título no menu flutuante para criar grupos dentro do menu, informe o atributo `group_title: true` no item. Exemplo:

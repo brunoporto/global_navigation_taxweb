@@ -115,13 +115,24 @@ class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
   end
 
   def menu_item(item)
+    item_options = item.send(:options) # private method
+    if item_options[:group_title]
+      content_tag(:div, class: 'navigation-menu-group-title') do
+        content_tag(:span, item.name)
+      end
+    else
+      menu_item_link(item)
+    end
+  end
+
+  def menu_item_link(item)
     link_options = link_options_for(item)
     link_options[:class] = add_class(link_options[:class], 'navigation-menu-item')
 
     link_content = []
     link_content << content_tag(:div, class: 'navigation-menu-item-icon') do 
       icon_class = icon_class_from_options(item)
-      icon_class = 'far fa-fw fa-circle' if icon_class.blank?
+      # icon_class = 'far fa-fw fa-circle' if icon_class.blank? #Default icon
       content_tag(:i, nil, class: icon_class)
     end
     link_content << content_tag(:div, item.name, class: 'navigation-menu-item-label')

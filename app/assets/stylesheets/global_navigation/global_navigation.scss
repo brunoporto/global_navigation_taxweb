@@ -9,6 +9,7 @@ $bar-link-active-color: #3d8bc0 !default;
 $bar-link-hover-color: #2472a7 !default;
 
 $menu-link-color: #1a2544 !default;
+$menu-group-title-color: #172b4d !default;
 $menu-link-selected-color: #17213d !default;
 
 .layout-container {
@@ -270,6 +271,17 @@ $menu-link-selected-color: #17213d !default;
             padding-left: 16px;
             padding-right: 16px;
             padding-bottom: 12px;
+
+            .navigation-menu-group-title {
+              margin-top: 20px;
+              margin-bottom: 10px;
+              flex: 0 1 auto;
+              color: $menu-group-title-color;
+              font-style: normal;
+              font-size: 22px;
+              font-weight: 600;
+              letter-spacing: -0.16px;
+            }
 
             .navigation-menu-item {
               -webkit-box-align: center;
