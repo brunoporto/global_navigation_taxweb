@@ -2,7 +2,7 @@
   .container-navigation-mask
     .global-navigation
       .shadow{:style => "margin-left: 64px;"}
-      = render_navigation(context: :global, level: 1)
+      = render_navigation context: :global, level: 1
     - if show_navigation_menu?
       .content-navigation-wrapper
         .container-navigation-menu-base
