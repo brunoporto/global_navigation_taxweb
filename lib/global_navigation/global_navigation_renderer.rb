@@ -96,6 +96,7 @@ class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
       link_options[:class] = add_class(link_options[:class], 'first-item') 
       link_content = content_tag(:img, nil, src: item_options[:src], class: 'navigation-item-brand')
     elsif item.key == :profile && position == :secondary
+      link_options[:class] = add_class(link_options[:class], 'last-item')
       link_content = content_tag(:img, nil, src: item_options[:src], class: 'profile-item-img')
     else
       link_content = content_tag(:i, nil, class: icon_class_from_options(item))

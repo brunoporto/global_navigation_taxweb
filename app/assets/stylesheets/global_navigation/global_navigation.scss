@@ -48,7 +48,7 @@ $menu-link-selected-color: #17213d !default;
       .global-navigation {
         .shadow {
           bottom: 0px;
-          left: -12px;
+          left: 0px;
           opacity: 1;
           pointer-events: none;
           position: absolute;
@@ -132,9 +132,14 @@ $menu-link-selected-color: #17213d !default;
                 outline: none;
                 padding: 0px;
                 text-decoration: none;
+                margin-top: 3px;
+                margin-bottom: 3px;
 
                 &.first-item {
                   margin-bottom: 8px;
+                }
+                &.last-item {
+                  margin-bottom: 0px;
                 }
                 &.selected {
                   background-color: $bar-link-selected-color;
