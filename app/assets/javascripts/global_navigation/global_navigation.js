@@ -55,6 +55,13 @@
     this.close = function(_ev) {
       var element = this.container;
       var arr = element.className.split(" ");
+      var navigationElement = element.querySelector(
+        ".content-navigation-wrapper"
+      );
+      navigationElement.style.width = "20px";
+      window.setTimeout(function() {
+        navigationElement.style.width = null;
+      }, 300);
       if (arr.indexOf("closed") == -1) {
         element.className += " " + "closed";
       }

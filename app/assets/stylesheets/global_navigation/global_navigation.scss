@@ -419,7 +419,7 @@ $menu-link-selected-color: #17213d !default;
 
   &.closed {
     .navigation-container {
-      .container-navigation-mask .content-navigation-wrapper {
+      .content-navigation-wrapper {
         width: 16px;
         .container-navigation-menu-base {
           min-width: 16px;
@@ -435,7 +435,7 @@ $menu-link-selected-color: #17213d !default;
       }
 
       &:hover {
-        .container-navigation-mask .content-navigation-wrapper {
+        .content-navigation-wrapper {
           width: 240px;
           .container-navigation-primitive-base {
             min-width: 240px;
