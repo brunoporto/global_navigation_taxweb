@@ -420,9 +420,9 @@ $menu-link-selected-color: #17213d !default;
   &.closed {
     .navigation-container {
       .container-navigation-mask .content-navigation-wrapper {
-        width: 20px;
+        width: 16px;
         .container-navigation-menu-base {
-          min-width: 20px;
+          min-width: 16px;
         }
       }
       .navigation-resize-button.closed {
@@ -453,7 +453,7 @@ $menu-link-selected-color: #17213d !default;
     }
 
     .content-container {
-      padding-left: 20px;
+      padding-left: 16px;
     }
   }
 }
