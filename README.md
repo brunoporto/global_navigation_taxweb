@@ -45,6 +45,26 @@ Adicione os assets:
 
 Edite o arquivo gerado pela instalação em `config/global_navigation.rb`
 
+Siga as regras e configurações do simple_navigation.
+
+Para identificar a rota atual e escolher o bloco ativo, o simples_navigation utiliza a url atual, portanto itens com a mesma URL ou com urls encadeadas podem gerar conflitos e identificar mais de um item como ativo. Exemplo:
+
+```
+Admin:
+  Usuários -> /users
+
+Usuário:
+  Editar -> /users/xxxxxxx/edit
+```
+
+Nesse caso, estando na roda /users, ele irá ativar também o /users/xxxxx/edit pois ele identifica o segundo item como sub-item do primeiro.
+
+O comportamento de seleção do item ativo é feito pelo simple_navigation, portanto caso encontre problemas de conflito entre as rotas, utilize o atributo `highlights_on`.
+
+Estude bem a GEM simple_navigation e seus comportamentos para que possa evitar conflitos de rotas e entender como ele funcina para criar um arquivo de configuração do Menu bem definido.
+
+A gem global_navigation é um **renderizador** do menu e utiliza o simple_navigation como base em todo seu comportamento de exibição e atribuição dos itens do menu.
+
 ### ITEM PARA EXIBIR O LOGOTIPO
 
 Possui a posição fixa sempre como o primeiro item da barra, não importa em qual ordem você informe ele no arquivo.
