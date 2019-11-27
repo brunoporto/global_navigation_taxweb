@@ -22,9 +22,8 @@ class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
 
     item_container.items.each do |item|
       item_options = item.send(:options) # private method
-      item_options[:position] = :primary if item.key == :logo
+      item_options[:position] = :primary if item_options[:position].nil? || item.key == :logo
       item_options[:position] = :secondary if item.key == :profile
-      raise "Invalid Position" if item_options[:position].nil?
 
       if item_options[:position] == :secondary 
         if item.key == :profile
