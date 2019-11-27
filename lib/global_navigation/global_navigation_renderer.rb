@@ -90,6 +90,7 @@ class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
     position = item_options[:position]
     type = item_options[:type]
     link_options = link_options_for(item)
+    link_options[:data] = add_title(item, link_options[:data]) unless item.key == :logo
     link_options[:class] = add_class(link_options[:class], 'navigation-item-link')
     if item.key == :logo && position == :primary
       link_options[:class] = add_class(link_options[:class], 'first-item') 
@@ -143,6 +144,14 @@ class GlobalNavigationRenderer < SimpleNavigation::Renderer::Base
   def add_class(current_attributes, new_attributes)
     current_attributes ||= ''
     current_attributes.split(' ').push(new_attributes).join(' ')
+  end
+
+  def add_title(item, link_data)
+    link_data ||= {}
+    link_data.merge({boundary: :window,
+                     placement: :right,
+                     title: item.name.to_s,
+                     toggle: :tooltip})
   end
 
   def content_list_to_html(list_content = [])
