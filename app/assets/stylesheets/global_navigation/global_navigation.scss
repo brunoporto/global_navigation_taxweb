@@ -89,6 +89,48 @@ $menu-link-selected-color: #17213d !default;
               justify-content: space-between;
               font-size: 18px !important;
 
+              .navigation-item-badge {
+                background-color: rgb(223, 225, 230);
+                color: rgb(23, 43, 77);
+
+                display: inline-block;
+                font-size: 12px;
+                font-weight: normal;
+                line-height: 1;
+                min-width: 1px;
+                text-align: center;
+                border-radius: 2em;
+                // padding: 0.166667em 0.5em;
+
+                -webkit-box-align: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                -webkit-box-pack: justify;
+                justify-content: center;
+
+                min-width: 16px;
+                height: 16px;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                span {
+                  padding: 0.166667em 0.4em;
+                  padding-left: 0.3em;
+                }
+
+                &.primary {
+                  background-color: rgb(0, 82, 204);
+                  color: rgb(255, 255, 255);
+                }
+                &.important {
+                  background-color: rgb(222, 53, 11);
+                  color: rgb(255, 255, 255);
+                }
+              }
+
               .navigation-item-link {
                 -webkit-box-align: center;
                 align-items: center;
